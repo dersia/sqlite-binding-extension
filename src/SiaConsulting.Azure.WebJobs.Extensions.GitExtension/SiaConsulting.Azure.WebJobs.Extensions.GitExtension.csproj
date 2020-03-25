@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>SiaConsulting.Azure.WebJobs.Extensions.GitExtension</AssemblyName>
+    <RootNamespace>SiaConsulting.Azure.WebJobs.Extensions.GitExtension</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.0.1</Version>
+    <Authors>Sia Consulting Ltd.</Authors>
+    <Product>Azure Functions Git Binding</Product>
+    <PackageId>SiaConsulting.Azure.WebJobs.Extensions.GitExtension</PackageId>
+    <Description>Binding Extension for Azure Functions to access Git</Description>
+    <Copyright>2019 Sia Consulting Ltd.</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/dersia/git-binding-extension</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dersia/git-binding-extension</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <Nullable>enable</Nullable>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\\..\\LICENSE" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+</Project>

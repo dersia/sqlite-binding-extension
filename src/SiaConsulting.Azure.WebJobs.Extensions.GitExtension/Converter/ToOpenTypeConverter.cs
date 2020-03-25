@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CustomBindingsTemplate.Converter
+namespace SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Converter
 {
     public class ToOpenTypeConverter<T> : IConverter<T, MYDATATYPE>
     {

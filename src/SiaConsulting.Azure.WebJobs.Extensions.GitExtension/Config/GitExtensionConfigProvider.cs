@@ -2,21 +2,21 @@
 using Microsoft.Azure.WebJobs.Host.Config;
 using Microsoft.Extensions.Logging;
 using System;
-using CustomBindingsTemplate.Bindings;
-using CustomBindingsTemplate.Converter;
+using SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Bindings;
+using SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Converter;
 using Microsoft.Azure.WebJobs.Host.Bindings;
 using System.Collections.Generic;
 
-namespace CustomBindingsTemplate.Config
+namespace SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Config
 {
-    [Extension(nameof(MYBINDING))]
-    public class CustomBindingsTemplate_ConfigProvider : IExtensionConfigProvider
+    [Extension("Git")]
+    public class GitExtensionConfigProvider : IExtensionConfigProvider
     {
         private readonly Microsoft.Extensions.Logging.ILogger _logger;
 
-        public CustomBindingsTemplate_ConfigProvider(ILoggerFactory loggerFactory)
+        public GitExtensionConfigProvider(ILoggerFactory loggerFactory)
         {
-            _logger = loggerFactory.CreateLogger(nameof(MYBINDING));
+            _logger = loggerFactory.CreateLogger("Git");
         }
 
         public void Initialize(ExtensionConfigContext context)
@@ -26,7 +26,7 @@ namespace CustomBindingsTemplate.Config
                 throw new ArgumentNullException("context");
             }
 
-            var MYBINDINGRULE = context.AddBindingRule<MYATTRIBUTE>();
+            var MYBINDINGRULE = context.AddBindingRule<GitAttribute>();
             MYBINDINGRULE.BindToInput<RESULTINGTYPE>(new InputAsyncConverter(_logger));
             MYBINDINGRULE.BindToCollector<MYDATATYPE>(config => new OutputAsyncCollector(config, _logger));
             context.AddAll_MYDATATYPE_Converters(_logger);

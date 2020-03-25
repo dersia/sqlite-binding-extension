@@ -2,11 +2,11 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace CustomBindingsTemplate.Config
+namespace SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Config
 {
     public static class WebJobsBuilderExtensions
     {
-        public static IWebJobsBuilder Add_MYBINDING_NAME(this IWebJobsBuilder builder)
+        public static IWebJobsBuilder AddGitExtension(this IWebJobsBuilder builder)
         {
             if (builder == null)
             {

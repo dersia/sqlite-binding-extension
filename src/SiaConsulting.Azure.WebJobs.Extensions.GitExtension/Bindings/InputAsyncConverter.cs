@@ -2,9 +2,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CustomBindingsTemplate.Bindings
+namespace SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Bindings
 {
-    public class InputAsyncConverter : IAsyncConverter<MYATTRIBUTE, RESULTINGTYPE>
+    public class InputAsyncConverter : IAsyncConverter<GitAttribute, RESULTINGTYPE>
     {
         private readonly Microsoft.Extensions.Logging.ILogger _logger;
 
@@ -13,7 +13,7 @@ namespace CustomBindingsTemplate.Bindings
             _logger = logger;
         }
 
-        public Task<RESULTINGTYPE> ConvertAsync(MYATTRIBUTE config, CancellationToken cancellationToken)
+        public Task<RESULTINGTYPE> ConvertAsync(GitAttribute config, CancellationToken cancellationToken)
         {
             return Task.FromResult<RESULTINGTYPE>(null);
         }
