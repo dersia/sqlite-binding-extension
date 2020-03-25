@@ -1,2 +1,2 @@
-# This is a binding extension temaplte for Azure Functions
+# This is a sqlite binding extension for Azure Functions
 

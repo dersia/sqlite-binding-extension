@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Dynamic;
 
-namespace SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Converter
+namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Converter
 {
     public static class CommonConverter
     {

@@ -2,18 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>SiaConsulting.Azure.WebJobs.Extensions.GitExtension</AssemblyName>
-    <RootNamespace>SiaConsulting.Azure.WebJobs.Extensions.GitExtension</RootNamespace>
+    <AssemblyName>SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension</AssemblyName>
+    <RootNamespace>SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>0.0.0.1</Version>
     <Authors>Sia Consulting Ltd.</Authors>
-    <Product>Azure Functions Git Binding</Product>
-    <PackageId>SiaConsulting.Azure.WebJobs.Extensions.GitExtension</PackageId>
-    <Description>Binding Extension for Azure Functions to access Git</Description>
+    <Product>Azure Functions Sqlite Binding</Product>
+    <PackageId>SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension</PackageId>
+    <Description>Binding Extension for Azure Functions to access Sqlite</Description>
     <Copyright>2019 Sia Consulting Ltd.</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/dersia/git-binding-extension</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/dersia/git-binding-extension</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/dersia/sqlite-binding-extension</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dersia/sqlite-binding-extension</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
     <Nullable>enable</Nullable>
     <LangVersion>8.0</LangVersion>

@@ -3,14 +3,14 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Bindings
+namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Bindings
 {
     public class OutputAsyncCollector : IAsyncCollector<MYDATATYPE>, IDisposable
     {
         private readonly ILogger _logger;
-        private readonly GitAttribute _config;
+        private readonly SqliteAttribute _config;
 
-        public OutputAsyncCollector(GitAttribute config, Microsoft.Extensions.Logging.ILogger logger)
+        public OutputAsyncCollector(SqliteAttribute config, Microsoft.Extensions.Logging.ILogger logger)
         {
             _config = config;
             _logger = logger;

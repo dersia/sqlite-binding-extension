@@ -1,7 +1,7 @@
 ﻿using Microsoft.Azure.WebJobs;
 using Newtonsoft.Json;
 
-namespace SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Converter
+namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Converter
 {
     public class FromOpenTypeConverter<T> : IConverter<MYDATATYPE, T>
     {

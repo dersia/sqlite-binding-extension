@@ -2,11 +2,11 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Config
+namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Config
 {
     public static class WebJobsBuilderExtensions
     {
-        public static IWebJobsBuilder AddGitExtension(this IWebJobsBuilder builder)
+        public static IWebJobsBuilder AddSqliteExtension(this IWebJobsBuilder builder)
         {
             if (builder == null)
             {

@@ -2,9 +2,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Bindings
+namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Bindings
 {
-    public class InputAsyncConverter : IAsyncConverter<GitAttribute, RESULTINGTYPE>
+    public class InputAsyncConverter : IAsyncConverter<SqliteAttribute, RESULTINGTYPE>
     {
         private readonly Microsoft.Extensions.Logging.ILogger _logger;
 
@@ -13,7 +13,7 @@ namespace SiaConsulting.Azure.WebJobs.Extensions.GitExtension.Bindings
             _logger = logger;
         }
 
-        public Task<RESULTINGTYPE> ConvertAsync(GitAttribute config, CancellationToken cancellationToken)
+        public Task<RESULTINGTYPE> ConvertAsync(SqliteAttribute config, CancellationToken cancellationToken)
         {
             return Task.FromResult<RESULTINGTYPE>(null);
         }
