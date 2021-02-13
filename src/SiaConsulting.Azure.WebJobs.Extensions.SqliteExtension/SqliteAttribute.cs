@@ -11,5 +11,6 @@ namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension
 
         [AppSetting]
         public string ConnectionString { get; set; }
+        public string EntityId { get; set; }
     }
 }

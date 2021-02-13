@@ -12,7 +12,7 @@ namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Config
             {
                 throw new ArgumentNullException(nameof(builder));
             }
-
+            builder.AddExtension<SqliteExtensionConfigProvider>();
             return builder;
         }
     }

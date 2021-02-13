@@ -1,6 +1,7 @@
 ﻿using Microsoft.Azure.WebJobs.Host.Config;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Models;
 using System.Dynamic;
 
 namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Converter
@@ -11,7 +12,6 @@ namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Converter
             => context
                 .AddStringTo_MYDATATYPE_Converter(logger)
                 .AddJObjectTo_MYDATATYPE_Converter(logger)
-                .AddDynamicTo_MYDATATYPE_Converter(logger)
                 .AddExpandoObjectTo_MYDATATYPE_Converter(logger)
                 .Add_MYDATATYPE_ToJObjectConverter(logger)
                 .Add_MYDATATYPE_ToStringConverter(logger)
@@ -19,22 +19,19 @@ namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Converter
                 .AddStringToJObjectConverter(logger);
 
         private static ExtensionConfigContext AddStringTo_MYDATATYPE_Converter(this ExtensionConfigContext context, Microsoft.Extensions.Logging.ILogger logger)
-            => context.AddConverter<string, MYDATATYPE>((value, attr) => new MYDATATYPE());
+            => context.AddConverter<string, Tag>((value, attr) => new Tag { TagString = value });
 
         public static ExtensionConfigContext AddJObjectTo_MYDATATYPE_Converter(this ExtensionConfigContext context, Microsoft.Extensions.Logging.ILogger logger)
-            => context.AddConverter<JObject?, MYDATATYPE?>(payload => JsonConvert.DeserializeObject<MYDATATYPE>(payload?.ToString()));
-
-        public static ExtensionConfigContext AddDynamicTo_MYDATATYPE_Converter(this ExtensionConfigContext context, Microsoft.Extensions.Logging.ILogger logger)
-            => context.AddConverter<dynamic?, MYDATATYPE?>(payload => JsonConvert.DeserializeObject<MYDATATYPE>((JsonConvert.SerializeObject(payload))));
+            => context.AddConverter<JObject?, Tag?>(payload => JsonConvert.DeserializeObject<Tag>(payload?.ToString()));
 
         public static ExtensionConfigContext AddExpandoObjectTo_MYDATATYPE_Converter(this ExtensionConfigContext context, Microsoft.Extensions.Logging.ILogger logger)
-            => context.AddConverter<ExpandoObject?, MYDATATYPE?>(payload => JsonConvert.DeserializeObject<MYDATATYPE>((JsonConvert.SerializeObject(payload))));
+            => context.AddConverter<ExpandoObject?, Tag?>(payload => JsonConvert.DeserializeObject<Tag>((JsonConvert.SerializeObject(payload))));
 
         public static ExtensionConfigContext Add_MYDATATYPE_ToJObjectConverter(this ExtensionConfigContext context, Microsoft.Extensions.Logging.ILogger logger)
-            => context.AddConverter<MYDATATYPE?, JObject?>(JObject.FromObject);
+            => context.AddConverter<Tag?, JObject?>(JObject.FromObject);
 
         private static ExtensionConfigContext Add_MYDATATYPE_ToStringConverter(this ExtensionConfigContext context, Microsoft.Extensions.Logging.ILogger logger)
-            => context.AddConverter<MYDATATYPE?, string?>(value => value?.Value);
+            => context.AddConverter<Tag?, string?>(value => value?.TagString);
 
         public static ExtensionConfigContext AddJObecjtToStringConverter(this ExtensionConfigContext context, Microsoft.Extensions.Logging.ILogger logger)
             => context.AddConverter<JObject?, string?>(v => v?.ToString());

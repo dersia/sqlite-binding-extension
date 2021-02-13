@@ -6,6 +6,7 @@ using SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Bindings;
 using SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Converter;
 using Microsoft.Azure.WebJobs.Host.Bindings;
 using System.Collections.Generic;
+using SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Models;
 
 namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Config
 {
@@ -27,13 +28,13 @@ namespace SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension.Config
             }
 
             var MYBINDINGRULE = context.AddBindingRule<SqliteAttribute>();
-            MYBINDINGRULE.BindToInput<RESULTINGTYPE>(new InputAsyncConverter(_logger));
-            MYBINDINGRULE.BindToCollector<MYDATATYPE>(config => new OutputAsyncCollector(config, _logger));
+            MYBINDINGRULE.BindToInput<Tag>(new InputAsyncConverter(_logger));
+            MYBINDINGRULE.BindToCollector<Tag>(config => new OutputAsyncCollector(config, _logger));
             context.AddAll_MYDATATYPE_Converters(_logger);
-            context.AddOpenConverter<MYDATATYPE, OpenType>(typeof(FromOpenTypeConverter<>), _logger);
-            context.AddOpenConverter<IList<MYDATATYPE>, IList<OpenType>>(typeof(FromOpenTypeListConverter<>), _logger);
-            context.AddOpenConverter<OpenType, MYDATATYPE>(typeof(ToOpenTypeConverter<>), _logger);
-            context.AddOpenConverter< IList<OpenType>, IList<MYDATATYPE>>(typeof(ToOpenTypeListConverter<>), _logger);
+            context.AddOpenConverter<Tag, OpenType>(typeof(FromOpenTypeConverter<>), _logger);
+            context.AddOpenConverter<IList<Tag>, IList<OpenType>>(typeof(FromOpenTypeListConverter<>), _logger);
+            context.AddOpenConverter<OpenType, Tag>(typeof(ToOpenTypeConverter<>), _logger);
+            context.AddOpenConverter< IList<OpenType>, IList<Tag>>(typeof(ToOpenTypeListConverter<>), _logger);
         }
     }
 }

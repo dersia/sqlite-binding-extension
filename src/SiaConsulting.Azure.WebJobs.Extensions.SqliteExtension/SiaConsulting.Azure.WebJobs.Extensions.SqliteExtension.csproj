@@ -5,7 +5,7 @@
     <AssemblyName>SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension</AssemblyName>
     <RootNamespace>SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.0.1</Version>
+    <Version>0.0.0.2</Version>
     <Authors>Sia Consulting Ltd.</Authors>
     <Product>Azure Functions Sqlite Binding</Product>
     <PackageId>SiaConsulting.Azure.WebJobs.Extensions.SqliteExtension</PackageId>
@@ -16,11 +16,12 @@
     <RepositoryUrl>https://github.com/dersia/sqlite-binding-extension</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
     <Nullable>enable</Nullable>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.16" />
+    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.25" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.0-beta" />
   </ItemGroup>
 
   <ItemGroup>
